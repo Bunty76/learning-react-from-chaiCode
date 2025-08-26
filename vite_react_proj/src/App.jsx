@@ -5,15 +5,19 @@ function App() {
   let [count,setcount]=useState(0)
 
   const addOne=()=>{
-    count=count+1
-    setcount(count)
-    console.log(count)
+    if(count<5)  setcount(count+1);
+  }
+
+  const remOne=()=>{
+    if(count>0) setcount(count - 1);
+    
   }
   return (
     <>
       <h1>hello world!!</h1>
-      <div className="counter-div"> counter:{count}</div>
-      <button onClick={addOne}>add one {count}</button>
+      <div className="counter-div"> counter:goes 0 to 10 only</div>
+      <button onClick={addOne}>add one {count} </button>
+      <button onClick={remOne}>rem one{count} </button>
     </>
   );
 }
